@@ -14,6 +14,7 @@
 
 @property (strong) GSPreferences *prefs;
 
-- (IBAction)whyButtonClicked:(id)sender;
+- (IBAction)action_acpower:(NSButton *)sender;
+- (IBAction)action_battery:(NSButton *)sender;
 
 @end

@@ -423,6 +423,12 @@
 			attributes = {
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Cody Krieger";
+				TargetAttributes = {
+					8D1107260486CEB800E47090 = {
+						DevelopmentTeam = 72PN2F2N93;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "gfxCardStatus" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -634,8 +640,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 72PN2F2N93;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -648,13 +656,14 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "gfxCardStatus-Info.plist";
 				INSTALL_PATH = /Applications;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codykrieger.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = gfxCardStatus;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -665,7 +674,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 72PN2F2N93;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -676,7 +687,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "gfxCardStatus-Info.plist";
 				INSTALL_PATH = /Applications;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-DNDEBUG",
@@ -688,6 +699,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codykrieger.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = gfxCardStatus;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -735,7 +747,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG";
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = "";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -780,8 +792,9 @@
 				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = /Applications;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
