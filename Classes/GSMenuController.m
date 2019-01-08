@@ -38,7 +38,7 @@
 @synthesize updateItem;
 @synthesize preferencesItem;
 @synthesize quitItem;
-@synthesize visitWebsiteItem;
+//@synthesize visitWebsiteItem;
 @synthesize currentCard;
 @synthesize currentPowerSource;
 @synthesize switchGPUs;
@@ -89,15 +89,15 @@
     [RACAble(self.menuIsOpen) subscribeNext:^(id x) {
         GTMLoggerDebug(@"Menu open: %@", x);
         
-        if (_prefs.shouldUseImageIcons) {
-            NSString *imageName = _statusItem.image.name;
+        if (self->_prefs.shouldUseImageIcons) {
+            NSString *imageName = self->_statusItem.image.name;
             
             if ([x boolValue])
                 imageName = [imageName stringByAppendingString:kImageIconOpenSuffix];
             else
                 imageName = [imageName stringByReplacingOccurrencesOfString:kImageIconOpenSuffix withString:@""];
             
-            [_statusItem setImage:[NSImage imageNamed:imageName]];
+            [self->_statusItem setImage:[NSImage imageNamed:imageName]];
         }
     }];
     
@@ -256,7 +256,7 @@
 {
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [versionItem setTitle:[Str(@"About") stringByReplacingOccurrencesOfString:@"%%" withString:version]];
-    [visitWebsiteItem setTitle:[Str(visitWebsiteItem.title) stringByReplacingOccurrencesOfString:@"%%" withString:kApplicationWebsiteURL]];
+//    [visitWebsiteItem setTitle:[Str(visitWebsiteItem.title) stringByReplacingOccurrencesOfString:@"%%" withString:kApplicationWebsiteURL]];
     NSArray *localized = [NSArray arrayWithObjects:updateItem, preferencesItem,
                           quitItem, switchGPUs, integratedOnly, discreteOnly, 
                           dynamicSwitching, dependentProcesses, processList, 

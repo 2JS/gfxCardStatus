@@ -1,108 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment version="1060" identifier="macosx"/>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AdvancedPreferencesViewController">
             <connections>
+                <outlet property="onBatteryTextField" destination="13" id="22"/>
+                <outlet property="pluggedInTextField" destination="7" id="23"/>
+                <outlet property="prefChkPowerSourceBasedSwitching" destination="2" id="34"/>
+                <outlet property="prefSegOnAc" destination="8" id="25"/>
+                <outlet property="prefSegOnBattery" destination="5" id="24"/>
                 <outlet property="view" destination="1" id="4"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="1">
-            <rect key="frame" x="0.0" y="0.0" width="440" height="183"/>
+            <rect key="frame" x="0.0" y="0.0" width="276" height="162"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" id="o2Y-Wi-dKd">
-                    <rect key="frame" x="152" y="145" width="124" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="radio" title="Intergraded Only" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="XhB-lW-45T">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                <segmentedControl focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5">
+                    <rect key="frame" x="15" y="72" width="247" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <segmentedCell key="cell" borderStyle="border" focusRingType="none" alignment="left" segmentDistribution="fill" style="rounded" trackingMode="selectOne" id="12">
                         <font key="font" metaFont="system"/>
-                    </buttonCell>
+                        <segments>
+                            <segment label="Integrated"/>
+                            <segment label="Dynamic" tag="1"/>
+                            <segment label="Discrete"/>
+                        </segments>
+                    </segmentedCell>
                     <connections>
-                        <action selector="action_acpower:" target="-2" id="cbN-if-Bjy"/>
+                        <binding destination="26" name="selectedIndex" keyPath="selection.GPUSetting_Battery" id="53"/>
+                        <binding destination="26" name="enabled" keyPath="selection.shouldUsePowerSourceBasedSwitching" id="60"/>
                     </connections>
-                </button>
-                <button verticalHuggingPriority="750" id="pbd-vS-6d3">
-                    <rect key="frame" x="152" y="123" width="104" height="18"/>
+                </segmentedControl>
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7">
+                    <rect key="frame" x="17" y="49" width="166" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="radio" title="Discrete Only" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="CEV-3O-mJ9">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" focusRingType="none" title="AC Power" id="10">
                         <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="action_acpower:" target="-2" id="1ey-bx-Cya"/>
-                    </connections>
-                </button>
-                <button verticalHuggingPriority="750" id="GdP-Th-jOZ">
-                    <rect key="frame" x="152" y="101" width="138" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="radio" title="Dynamic Switching" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="aPR-Wl-PQw">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="action_acpower:" target="-2" id="PcM-3x-i0u"/>
-                    </connections>
-                </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="19R-ML-E9A">
-                    <rect key="frame" x="35" y="64" width="114" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="On Battery power:" id="Kf5-f0-DSr">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button verticalHuggingPriority="750" id="pEf-By-caE">
-                    <rect key="frame" x="152" y="63" width="124" height="18"/>
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="13">
+                    <rect key="frame" x="17" y="103" width="166" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="radio" title="Intergraded Only" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="7Ng-Tk-oOY">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" focusRingType="none" title="Battery" id="14">
                         <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="action_battery:" target="-2" id="zsa-8m-5Jm"/>
-                    </connections>
-                </button>
-                <button verticalHuggingPriority="750" id="MfP-fd-HCV">
-                    <rect key="frame" x="152" y="41" width="104" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="radio" title="Discrete Only" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="gUj-2x-V4k">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="action_battery:" target="-2" id="VZ9-Mc-beo"/>
-                    </connections>
-                </button>
-                <button verticalHuggingPriority="750" id="7uK-U7-dwu">
-                    <rect key="frame" x="152" y="19" width="138" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="radio" title="Dynamic Switching" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Tgw-Bb-wtf">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="action_battery:" target="-2" id="4SX-QB-ePb"/>
-                    </connections>
-                </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="dcG-8H-gh5">
-                    <rect key="frame" x="61" y="146" width="88" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="On AC power:" id="Vyj-TL-9Vy">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button focusRingType="none" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2">
+                    <rect key="frame" x="18" y="126" width="404" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="check" title="PrefPowerSwitching" bezelStyle="regularSquare" imagePosition="leading" alignment="left" focusRingType="none" inset="2" id="3">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="26" name="value" keyPath="selection.shouldUsePowerSourceBasedSwitching" id="30"/>
+                    </connections>
+                </button>
+                <segmentedControl focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8">
+                    <rect key="frame" x="15" y="18" width="247" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <segmentedCell key="cell" state="on" borderStyle="border" focusRingType="none" alignment="left" segmentDistribution="fill" style="rounded" trackingMode="selectOne" id="9">
+                        <font key="font" metaFont="system"/>
+                        <segments>
+                            <segment label="Integrated"/>
+                            <segment label="Dynamic" tag="1"/>
+                            <segment label="Discrete"/>
+                        </segments>
+                    </segmentedCell>
+                    <connections>
+                        <binding destination="26" name="selectedIndex" keyPath="selection.GPUSetting_ACAdaptor" id="55"/>
+                        <binding destination="26" name="enabled" keyPath="selection.shouldUsePowerSourceBasedSwitching" id="62"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
-            <point key="canvasLocation" x="139" y="164.5"/>
+            <point key="canvasLocation" x="99" y="154"/>
         </customView>
         <objectController id="26">
             <connections>

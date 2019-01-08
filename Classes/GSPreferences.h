@@ -37,9 +37,7 @@ typedef enum {
 - (GSPowerSourceBasedSwitchingMode)modeForBattery;
 
 - (void)setBool:(BOOL)value forKey:(NSString *)key;
-- (BOOL)boolForKey:(NSString *)key;
-
-- (void)savePreferences;
+- (BOOL)boolForKey:(NSString *)key;;
 
 + (GSPreferences *)sharedInstance;
 

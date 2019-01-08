@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,7 +11,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <menu title="AMainMenu" systemMenu="main" id="29">
             <items>
                 <menuItem title="gfxCardStatus" id="56">
@@ -646,6 +646,7 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="141" y="141"/>
         </menu>
         <customObject id="494" userLabel="gfxCardStatus App Delegate" customClass="gfxCardStatusAppDelegate">
             <connections>
@@ -700,7 +701,7 @@
                         <action selector="setMode:" target="850" id="873"/>
                     </connections>
                 </menuItem>
-                <menuItem title="DynamicSwitching" state="on" id="760">
+                <menuItem title="DynamicSwitching" id="760">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="setMode:" target="850" id="874"/>
@@ -714,14 +715,8 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="711"/>
-                <menuItem title="by Cody Krieger" id="647">
+                <menuItem title="by Cody Krieger" enabled="NO" id="647">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem title="VisitWebsite" id="648">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="openApplicationURL:" target="850" id="866"/>
-                    </connections>
                 </menuItem>
                 <menuItem title="Quit" id="649">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -748,7 +743,6 @@
                 <outlet property="switchGPUs" destination="723" id="858"/>
                 <outlet property="updateItem" destination="658" id="859"/>
                 <outlet property="versionItem" destination="646" id="860"/>
-                <outlet property="visitWebsiteItem" destination="648" id="876"/>
             </connections>
         </customObject>
     </objects>

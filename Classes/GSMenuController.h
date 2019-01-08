@@ -30,7 +30,7 @@
 @property (weak) IBOutlet NSMenuItem *updateItem;
 @property (weak) IBOutlet NSMenuItem *preferencesItem;
 @property (weak) IBOutlet NSMenuItem *quitItem;
-@property (weak) IBOutlet NSMenuItem *visitWebsiteItem;
+//@property (weak) IBOutlet NSMenuItem *visitWebsiteItem;
 
 @property (weak) IBOutlet NSMenuItem *currentCard;
 @property (weak) IBOutlet NSMenuItem *currentPowerSource;
